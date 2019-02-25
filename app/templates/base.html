@@ -1,0 +1,28 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - CFB Pick 'Em</title>
+        {% else %}
+        <title>CFB Pick 'Em</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>
+            CFB Pick Em:
+                <a href="{{ url_for('hello')}}">Home</a>
+                <a href="{{ url_for('login')}}">Login</a>
+        </div>
+
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

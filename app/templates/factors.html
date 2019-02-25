@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> The factors of {{number}} are: </h1>
+<ul>
+    {% for f in factor_list %}
+    <li>{{f}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
